@@ -16,6 +16,9 @@ const fs = require("fs");
 const path = require("path");
 
 const createTicket = async (req, res) => {
+  return res
+    .status(500)
+    .json({ message: "We apologize for the inconvenience. You cannot create a ticket at this time because we are migrated to a new system. Please use our new link: https://beta-ticketing.smctgroup.ph" });
   const { category, date, reference_number, supplier, branch_id } = req.body;
   const combinedPurpose = Array.isArray(req.body.purpose)
     ? req.body.purpose
